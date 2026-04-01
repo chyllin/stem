@@ -1,0 +1,115 @@
+.navbar {
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: .8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: .6rem;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem; color: var(--p);
+  background: none; border: none; cursor: pointer;
+  white-space: nowrap; padding: 0;
+  transition: opacity var(--transition);
+}
+.nav-brand:hover { opacity: .82; }
+.nav-brand i { color: var(--p-light); font-size: 1.4rem; }
+
+.nav-links { display: flex; gap: .25rem; }
+.nav-link {
+  display: flex; align-items: center; gap: .4rem;
+  padding: .45rem .85rem; border-radius: var(--r-md);
+  font-size: .88rem; font-weight: 500; color: var(--text2);
+  background: none; border: none; cursor: pointer;
+  transition: all var(--transition); white-space: nowrap;
+}
+.nav-link i { font-size: .82rem; }
+.nav-link:hover  { background: var(--p-soft); color: var(--p); }
+.nav-link.active { background: var(--p); color: #fff; font-weight: 600; }
+
+.nav-actions { display: flex; align-items: center; gap: .65rem; }
+.nav-auth-btns { display: flex; gap: .45rem; }
+
+/* User */
+.nav-user { position: relative; }
+.nav-user-btn {
+  display: flex; align-items: center; gap: .45rem;
+  padding: .38rem .8rem; border-radius: var(--r-lg);
+  background: var(--p-soft); border: none; cursor: pointer;
+  font-weight: 600; font-size: .86rem; color: var(--p);
+  transition: all var(--transition);
+}
+.nav-user-btn:hover { background: #e0e7ff; box-shadow: var(--sh-sm); }
+.nav-user-btn > i { font-size: .62rem; }
+.nav-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--p), var(--p-light));
+  color: #fff; font-size: .7rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.nav-role-badge {
+  font-size: .6rem; font-weight: 700; padding: .08rem .45rem;
+  border-radius: 20px; text-transform: uppercase; letter-spacing: .04em;
+}
+.nav-role-parent { background: #dbeafe; color: #1d4ed8; }
+.nav-role-tutor  { background: #d1fae5; color: #065f46; }
+.nav-role-admin  { background: #fef3c7; color: #92400e; }
+
+.nav-drop-backdrop { position: fixed; inset: 0; z-index: 999; }
+.nav-dropdown {
+  position: absolute; top: calc(100% + .5rem); right: 0;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r-md); box-shadow: var(--sh-lg);
+  min-width: 200px; overflow: hidden; z-index: 1000;
+  animation: fadeUp .18s ease;
+}
+.nav-drop-user {
+  padding: .85rem 1rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-drop-name  { font-weight: 700; font-size: .88rem; color: var(--text); }
+.nav-drop-email { font-size: .72rem; color: var(--text3); margin-top: .08rem; }
+.nav-drop-divider { height: 1px; background: var(--border); }
+.nav-drop-item {
+  display: flex; align-items: center; gap: .65rem;
+  padding: .7rem 1rem; width: 100%;
+  background: none; border: none; cursor: pointer;
+  font-size: .86rem; color: var(--text);
+  text-align: left; transition: background var(--transition);
+}
+.nav-drop-item:hover  { background: var(--p-soft); color: var(--p); }
+.nav-drop-item.danger { color: var(--error); }
+.nav-drop-item.danger:hover { background: #fef2f2; color: var(--error); }
+.nav-drop-item i { width: 15px; text-align: center; }
+
+.nav-mobile-toggle {
+  display: none; background: none; border: none;
+  font-size: 1.3rem; color: var(--text); cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+    background: var(--bg2); padding: 1.5rem;
+    z-index: 999; border-top: 3px solid var(--p);
+    box-shadow: var(--sh-lg);
+  }
+  .nav-links.open .nav-link { font-size: 1rem; padding: .8rem 1rem; }
+  .nav-mobile-toggle { display: block; }
+  .nav-inner { padding: .75rem 1rem; }
+}

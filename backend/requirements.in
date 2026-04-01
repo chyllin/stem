@@ -1,0 +1,50 @@
+# Web Framework & API
+django
+djangorestframework
+djangorestframework_simplejwt
+django-cors-headers
+
+# Database & Cache
+mysqlclient
+mysql-connector-python
+redis
+django-redis
+django-netfields
+psycopg2-binary
+
+# Server & Async
+uvicorn
+asgiref
+aiohttp
+
+# Environment & Config
+python-decouple
+python-dotenv
+pip-tools
+pre-commit
+
+# Security & Validation
+django-axes
+pydantic
+cryptography
+PyJWT
+
+# File Processing & Scraping
+beautifulsoup4
+lxml
+PyMuPDF
+python-docx
+python-pptx
+xlsxwriter
+pillow
+
+# External APIs & Tools
+openai
+requests
+phonenumbers
+whitenoise
+
+# Development Tools
+pipenv
+tqdm
+gunicorn
